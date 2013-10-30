@@ -4,9 +4,13 @@ rvm:
 services: mongodb
 install: git clone https://github.com/ministryofjustice/opg-lpa-api.git
 before_script:
+  - "echo `ls`"
   - "cd opg-lpa-api"
+  - "echo `ls`"
+  - "bundle install"
   - "bundle exec rackup &"
   - "cd .."
+  - "echo `ls`"
   - "sleep 2"
 script: bundle exec rspec spec
 notifications:
