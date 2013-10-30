@@ -1,5 +1,5 @@
 require 'spec_helper'
-if ENV["INTEGRATION"]
+# if ENV["INTEGRATION"]
 feature 'Filling in an LPA' do
   before(:each) do
     WebMock.disable!
@@ -62,4 +62,4 @@ feature 'Filling in an LPA' do
   end
 
 end
-end
+# end
