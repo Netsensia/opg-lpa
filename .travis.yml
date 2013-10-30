@@ -8,6 +8,7 @@ before_script:
   - "cd opg-lpa-api"
   - "echo `ls`"
   - "bundle install"
+  - echo -e "require 'action_view'\n$(cat /home/travis/.rvm/gems/ruby-2.0.0-p247/gems/haml-4.0.3/lib/haml/helpers/safe_erubis_template.rb)" > /home/travis/.rvm/gems/ruby-2.0.0-p247/gems/haml-4.0.3/lib/haml/helpers/safe_erubis_template.rb
   - "bundle exec rackup --host localhost --port 9292 &"
   - "cd .."
   - "echo `ls`"
