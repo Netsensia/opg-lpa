@@ -8,10 +8,11 @@ before_script:
   - "cd opg-lpa-api"
   - "echo `ls`"
   - "bundle install"
-  - "bundle exec rackup &"
+  - "bundle exec rackup --host localhost --port 9292 &"
   - "cd .."
   - "echo `ls`"
   - "sleep 2"
+  - "wget http://localhost:9292/api/swagger_doc.json"
 script: bundle exec rspec spec
 notifications:
   hipchat:
